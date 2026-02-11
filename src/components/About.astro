@@ -1,0 +1,56 @@
+---
+const skills = [
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "TypeScript",
+  "React",
+  "Astro",
+  "Tailwind CSS",
+  "Git",
+  "Python",
+  "FastAPI",
+  "Django",
+  "PostgreSQL",
+  "MongoDB",
+];
+---
+
+<section class="pt-20 pb-4" id="about">
+  <div
+    class="grid mx-4 lg:mx-auto max-w-280 pt-10 pb-8 md:grid-cols-[400px] lg:grid-cols-[350px_350px] lg:items-center xl:gap-28 xl:grid-cols-2"
+  >
+    <div>
+      <h2 class="text-h1-size text-main font-bold text-center">Sobre Mí</h2>
+      <p>
+        I am a web developer and designer specializing in creating modern,
+        functional, and visually appealing websites. I combine creativity and
+        functionality to transform ideas into intuitive interfaces, balancing
+        design, usability, and quality code.
+      </p>
+      <a
+        href="button inline-flex justify-center items-center bg-body text-white font-medium border-2 border-main py-4 px-6 rounded-lg hover:text-main"
+        >Contacto</a
+      >
+    </div>
+    <div>
+      <h3 class="text-h2-size text-main font-bold">
+        <i class="ri-bookmark-3-fill"></i>
+        <span>Skills</span>
+      </h3>
+
+      <ul class="flex flex-wrap items-center gap-2">
+        {
+          skills.map((skill) => (
+            <li
+              class="bg-main px-3 py-2 rounded-4xl text-black font-regular cursor-default border-2 border-body
+              hover:bg-body hover:text-white hover:border-main transition-colors transition-boder"
+            >
+              {skill}
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</section>
