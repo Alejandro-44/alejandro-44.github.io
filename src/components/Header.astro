@@ -1,0 +1,85 @@
+---
+const navLinks = [
+  { name: "Principal", href: "#home" },
+  { name: "Sobre mí", href: "#about" },
+  { name: "Curriculum", href: "#resume" },
+  { name: "Proyectos", href: "#projects" },
+  { name: "Contacto", href: "#contact" },
+];
+---
+
+<header
+  class="fixed top-0 left-0 z-10 w-full h-14 bg-body transition-shadow"
+  id="header"
+>
+  <nav class="flex justify-between items-center mx-6 h-full">
+    <a href="#home" class="font-semi-bold transition-colors hover:text-main">
+      Alejandro
+    </a>
+
+    <div class="nav__menu bg-body" id="nav-menu">
+      <ul class="flex flex-col gap-6 lg:flex-row lg:gap-16">
+        {
+          navLinks.map((link) => (
+            <li class="text-center">
+              <a
+                href={link.href}
+                class="nav__link relative text-white font-medium hover:text-main"
+              >
+                {link.name}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <div
+        class="cursor-pointer absolute top-4 right-6 text-2xl lg:hidden"
+        id="nav-close"
+      >
+        <i class="ri-close-large-line"></i>
+      </div>
+    </div>
+    <div class="cursor-pointer text-2xl lg:hidden" id="nav-toggle">
+      <i class="ri-menu-line"></i>
+    </div>
+  </nav>
+</header>
+<style>
+  @import "../styles/global.css";
+
+  @media screen and (width < 1024px) {
+    .nav__menu {
+      position: fixed;
+      top: -100%;
+      left: 0;
+      width: 100%;
+      padding-block: 5rem 4rem;
+      box-shadow: 0 8px 16px hsla(0, 0%, 0%, 0.5);
+      border-radius: 0 0 1.5rem 1.5rem;
+      transition: top 0.4s;
+    }
+  }
+
+  .nav__link {
+    transition: color 0.4s;
+  }
+
+  .nav__link::after {
+    content: "";
+    width: 0%;
+    height: 2px;
+    background-color: var(--color-main);
+    position: absolute;
+    left: 0;
+    bottom: -0.5rem;
+    transition: width 0.4s;
+  }
+
+  .nav__link:hover::after {
+    width: 60%;
+  }
+
+  .show {
+    top: 0;
+  }
+</style>
