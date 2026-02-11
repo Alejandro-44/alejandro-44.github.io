@@ -1,2 +1,41 @@
 @import "tailwindcss";
 @import "./theme.css";
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.home__image {
+  box-shadow: 0 8px 32px hsla(var(--hue), 80%, 48%, 0.3);
+}
+
+.home__img {
+  filter: drop-shadow(0 4px 16px hsla(0, 0%, 0%, 0.1));
+}
+
+.home__link {
+  transition:
+    transform 0.4s,
+    color 0.4s;
+}
+
+.home__link:hover {
+  transform: translateY(-0.25rem);
+  color: var(--color-main);
+}
+
+.button {
+  transition:
+    box-shadow 0.4s,
+    color 0.4s;
+}
+
+.button:hover {
+  box-shadow: 0 8px 24px hsla(var(--hue), 80%, 48%, 0.3);
+}
+
+.shadow-header {
+  box-shadow: 0px 2px 16px hsla(0, 0%, 0%, .5);
+}
