@@ -1,0 +1,25 @@
+@theme {
+  --hue: 35;
+  --color-main: hsl(var(--hue), 80%, 48%);
+  --color-main-alt: hsl(var(--hue), 80%, 44%);
+  --color-white: hsl(var(--hue), 8%, 92%);
+  --color-black: hsl(var(--hue), 4%, 8%);
+  --color-gray: hsl(var(--hue), 4%, 50%);
+  --color-body: hsl(var(--hue), 8%, 8%);
+  --color-container: hsl(var(--hue), 8%, 12%);
+
+  /*========== Font and typography ==========*/
+  --font-body: "Inter Variable", sans-serif;
+  --text-bigger-size: 2rem;
+  --text-h1-size: 1.5rem;
+  --text-h2-size: 1.25rem;
+  --text-h3-size: 1rem;
+  --text-normal-size: 0.938rem;
+  --text-small-size: 0.813rem;
+
+  /*========== Font weight ==========*/
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semi-bold: 600;
+}
