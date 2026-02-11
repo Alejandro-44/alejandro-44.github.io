@@ -18,10 +18,14 @@ import Header from "../components/Header.astro";
     <meta name="generator" content={Astro.generator} />
     <title>Astro</title>
   </head>
-  <body>
+  <body class="bg-body font-body text-white">
     <Header />
     <main>
       <slot />
     </main>
+
+    <script>
+      import "../scripts/menu"
+    </script>
   </body>
 </html>
