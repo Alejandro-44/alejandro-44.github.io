@@ -13,6 +13,7 @@
     "@fontsource-variable/unbounded": "^5.2.8",
     "@tailwindcss/vite": "^4.1.18",
     "astro": "^5.17.1",
+    "flowbite": "^4.0.1",
     "tailwindcss": "^4.1.18"
   }
 }
