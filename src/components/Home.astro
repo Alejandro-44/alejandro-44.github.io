@@ -1,3 +1,7 @@
+---
+import Button from "./Button.astro";
+---
+
 <section class="pt-20 pb-4" id="home">
   <div
     class="grid gap-16 justify-center mx-auto max-w-280 pt-10 pb-8 md:grid-cols-[400px] lg:grid-cols-[350px_350px] lg:items-center xl:gap-28 xl:grid-cols-[400px_480px]"
@@ -42,18 +46,29 @@
         create something that will make a difference in the world.
       </p>
       <div class="flex flex-wrap justify-center gap-2 mt-8">
-        <a
-          href="pdf/AlejandroArguello_CV_ES.pdf"
-          download
-          class="button inline-flex justify-center items-center bg-main text-black font-medium py-4 px-6 rounded-lg"
-          >Download CV</a
+        <Button href="pdf/AlejandroArguello_CV_ES.pdf" download
+          >Download CV</Button
         >
-        <a
-          href="#projects"
-          class="button inline-flex justify-center items-center bg-body text-white font-medium border-2 border-main py-4 px-6 rounded-lg hover:text-main"
-          >Projects</a
-        >
+        <Button href="#projects" variant="ghost">Projects</Button>
       </div>
     </div>
   </div>
 </section>
+<style>
+  .home__image {
+    box-shadow: 0 8px 32px hsla(var(--hue), 80%, 48%, 0.3);
+  }
+
+  .home__img {
+    filter: drop-shadow(0 4px 16px hsla(0, 0%, 0%, 0.1));
+  }
+
+  .home__link {
+    transition: transform 0.4s, color 0.4s;
+  }
+
+  .home__link:hover {
+    transform: translateY(-0.25rem);
+    color: var(--color-main);
+  }
+</style>

@@ -1,0 +1,33 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"a"> {
+  variant?: "primary" | "ghost";
+}
+
+const { variant = "primary", class: className, ...rest } = Astro.props;
+
+const baseClasses =
+  "button inline-flex justify-center items-center font-medium py-4 px-6 rounded-lg transition-colors";
+
+const variants = {
+  primary: "bg-main text-black",
+  ghost: "bg-body text-white border-2 border-main hover:text-main",
+};
+
+const finalClass = `${baseClasses} ${variants[variant]} ${className || ""}`;
+---
+
+<a class={finalClass} {...rest}>
+  <slot />
+</a>
+
+<style>
+  .button {
+    transition: box-shadow 0.4s, color 0.4s;
+  }
+
+  .button:hover {
+    box-shadow: 0 8px 24px hsla(var(--hue), 80%, 48%, 0.3);
+  }
+</style>

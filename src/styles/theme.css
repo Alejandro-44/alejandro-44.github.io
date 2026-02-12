@@ -1,5 +1,5 @@
 @theme {
-  --hue: 200;
+  --hue: 190;
   --color-main: hsl(var(--hue), 80%, 48%);
   --color-main-alt: hsl(var(--hue), 80%, 44%);
   --color-white: hsl(var(--hue), 8%, 92%);
