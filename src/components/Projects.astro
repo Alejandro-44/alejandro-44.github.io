@@ -1,0 +1,16 @@
+---
+import { projects } from "../constants";
+import ProjectCard from "./ProjectCard.astro";
+---
+
+<section class="pt-20 pb-4" id="projects">
+  <div>
+    <h2 class="text-h1-size text-main font-bold text-center">Proyectos</h2>
+
+    <div
+      class="grid gap-8 justify-center mx-4 lg:mx-auto max-w-280 pt-10 pb-8 md:grid-cols-[350px_350px] lg:grid-cols-[repeat(3,350px)]"
+    >
+      {projects.map((project) => <ProjectCard project={project} />)}
+    </div>
+  </div>
+</section>
