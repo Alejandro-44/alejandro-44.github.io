@@ -1,0 +1,51 @@
+---
+import Button from "./Button.astro";
+import type { Project } from "../types";
+
+interface Props {
+  project: Project;
+}
+
+const { project } = Astro.props;
+---
+
+<article class="project__card relative rounded-xl overflow-hidden shadow-lg">
+  <img class="rounded-b-xl" src={project.image} alt={project.name} />
+
+  <div
+    class="project__data absolute top-0 left-0 w-full h-full bg-black/50 backdrop-blur-lg grid place-content-center gap-2 px-2 md:px-6"
+  >
+    <h1 class="font-bold text-center text-h3-size">{project.name}</h1>
+    <p class="text-small-size">{project.description}</p>
+    <Button
+      class="button justify-self-center"
+      variant="ghost"
+      target="_blank"
+      rel="noopener noreferrer"
+      href={project.href}
+    >
+      Ver proyecto
+    </Button>
+  </div>
+</article>
+<style>
+  @import "../styles/theme.css";
+  .project__data {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s;
+  }
+
+  .project__card:hover .project__data {
+    opacity: 1;
+    pointer-events: initial;
+  }
+
+  .project__card:hover {
+    box-shadow: 0 8px 16px hsla(var(--hue), 80%, 48%, 0.2);
+  }
+
+  .button {
+    background-color: hsla(var(--hue), 8%, 8%, 0.4);
+  }
+</style>
