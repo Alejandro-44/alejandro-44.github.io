@@ -1,5 +1,7 @@
 ---
 import Header from "../components/Header.astro";
+import "@fontsource-variable/unbounded";
+import "@fontsource-variable/inter";
 ---
 
 <html lang="en">
@@ -18,7 +20,7 @@ import Header from "../components/Header.astro";
     <meta name="generator" content={Astro.generator} />
     <title>Astro</title>
   </head>
-  <body class="bg-body font-body text-white">
+  <body class="bg-body text-white">
     <Header />
     <main>
       <slot />
