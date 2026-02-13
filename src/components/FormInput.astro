@@ -1,0 +1,14 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"input"> {
+  as?: "input" | "textarea";
+}
+
+const { as: Tag = "input", class: className, ...props } = Astro.props;
+
+const styles =
+  "w-full bg-transparent hover:bg-body text-white border-2 border-main outline-none py-5 px-4 rounded-lg font-medium placeholder:text-gray focus:placeholder:text-main autofill:transition-colors";
+---
+
+<Tag class:list={[styles, className]} {...props} />

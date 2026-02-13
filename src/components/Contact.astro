@@ -1,0 +1,41 @@
+---
+import Button from "./Button.astro";
+import FormInput from "./FormInput.astro";
+---
+
+<section class="pt-20 pb-4" id="contact">
+  <h2 class="text-h1-size text-main font-bold text-center">Contacto</h2>
+
+  <div class="grid gap-16 justify-center mx-4 lg:mx-auto max-w-280 pt-10 pb-8 md:grid-cols-[350px_350px] md:items-start lg:grid-cols-[1fr 1.5fr] xl:gap-28">
+    <form class="grid gap-4 relative md:order-1" id="contact-form">
+      <FormInput type="text" placeholder="Nombre" name="user_name" required />
+      <FormInput type="email" placeholder="Email" name="user_email" required />
+      <FormInput
+        as="textarea"
+        class="h-40 resize-none"
+        placeholder="Mensaje"
+        name="user_message"
+        required
+      />
+      <Button class="cursor-pointer" variant="primary" type="submit"
+        >Enviar mensaje</Button
+      >
+
+      <p class="text-small absolute -bottom-8" id="contact-message">
+        Message sent successfully ✅
+      </p>
+    </form>
+
+    <div class="grid gap-y-4">
+      <address class="flex flex-wrap items-center gap-x-2">
+        <i class="ri-mail-fill text-2xl text-main"></i>
+        <span>alejandroarguelloduarte@gmail.com</span>
+      </address>
+
+      <address class="flex flex-wrap items-center gap-x-2">
+        <i class="ri-map-pin-2-fill text-2xl text-main"></i>
+        <span>Bogotá, Colombia</span>
+      </address>
+    </div>
+  </div>
+</section>
