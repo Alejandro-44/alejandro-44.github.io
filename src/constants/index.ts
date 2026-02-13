@@ -1,4 +1,4 @@
-import type { Project, Experience } from "../types";
+import type { Project, Experience, Education } from "../types";
 
 export const projects: Project[] = [
   {
@@ -35,5 +35,15 @@ Creé y presenté informes integrales de estado del proyecto, incorporando indic
 Coordiné eficazmente con los equipos de Aseguramiento de Calidad, diseño y desarrollo para garantizar una alineación clara sobre los requisitos del proyecto y facilitar una progresión fluida del flujo de trabajo.
 Automaticé el procesamiento de facturas utilizando Python, reduciendo el tiempo invertido en un 90%.
 Construí una automatización del sistema de archivos para verificar la presencia de facturas, ahorrando el 80% del tiempo del equipo.`,
+  },
+];
+
+
+export const educations: Education[] = [
+  {
+    title: "Ingeniería de Sistemas",
+    institution: "Universidad EAN",
+    startDate: new Date("2021-01-25"),
+    endDate: new Date("2025-11-25"),
   },
 ];

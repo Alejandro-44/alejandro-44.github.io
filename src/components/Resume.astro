@@ -1,38 +1,73 @@
 ---
-import { experiences } from "../constants";
+import { educations, experiences } from "../constants";
 ---
 
 <section class="pt-20 pb-4" id="resume">
-  <div class="grid gap-16 justify-center mx-4 lg:mx-auto max-w-280 pt-10 pb-8">
+  <div
+    class="grid gap-8 justify-center mx-4 lg:mx-auto max-w-280 pt-10 pb-8 lg:px-4"
+  >
     <h2 class="text-h1-size text-main font-bold text-center">Currículum</h2>
-    <ol class="relative border-s-2">
-      {
-        experiences.map((experience) => (
-          <li class="mb-10 ms-4">
-            <div class="absolute size-3 bg-main rounded-full mt-1.5 -left-[7px] border border-buffer" />
-            <time class="text-sm font-normal leading-none capitalize text-gray-400">
-              {experience.startDate.toLocaleDateString("es-CO", {
-                month: "long",
-                year: "numeric",
-              })}
-              {" - "}
-              {experience.endDate.toDateString() === new Date().toDateString()
-                ? "Presente"
-                : experience.endDate.toLocaleDateString("es-CO", {
-                    month: "long",
-                    year: "numeric",
-                  })}
-            </time>
-            <h3 class="text-lg font-semibold text-heading my-2">
-              {experience.role} <span class="text-main">@</span>{" "}
-              {experience.company}
-            </h3>
-            <p class="mb-4 text-base font-normal whitespace-pre-wrap">
-              {experience.description}
-            </p>
-          </li>
-        ))
-      }
-    </ol>
+    <div>
+      <h3 class="text-h3-size flex items-center gap-2"><i class="ri-briefcase-fill"></i> Experiencia</h3>
+
+      <ol class="relative border-s-2 mx-2">
+        {
+          experiences.map((experience) => (
+            <li class="mb-10 ms-4">
+              <div class="absolute size-3 bg-main rounded-full mt-1.5 -left-[7px] border border-buffer" />
+              <time class="text-sm font-normal leading-none capitalize text-gray-400">
+                {experience.startDate.toLocaleDateString("es-CO", {
+                  month: "long",
+                  year: "numeric",
+                })}
+                {" - "}
+                {experience.endDate.toDateString() === new Date().toDateString()
+                  ? "Presente"
+                  : experience.endDate.toLocaleDateString("es-CO", {
+                      month: "long",
+                      year: "numeric",
+                    })}
+              </time>
+              <h3 class="text-lg font-semibold text-heading my-2">
+                {experience.role} <span class="text-main">@</span>{" "}
+                {experience.company}
+              </h3>
+              <p class="mb-4 text-base font-normal whitespace-pre-wrap">
+                {experience.description}
+              </p>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+    <div>
+      <h3><i class="ri-graduation-cap-fill"></i> Educación</h3>
+      <ol class="relative border-s-2 mx-2">
+        {
+          educations.map((education) => (
+            <li class="mb-10 ms-4">
+              <div class="absolute size-3 bg-main rounded-full mt-1.5 -left-[7px] border border-buffer" />
+              <time class="text-sm font-normal leading-none capitalize text-gray-400">
+                {education.startDate.toLocaleDateString("es-CO", {
+                  month: "long",
+                  year: "numeric",
+                })}
+                {" - "}
+                {education.endDate.toDateString() === new Date().toDateString()
+                  ? "Presente"
+                  : education.endDate.toLocaleDateString("es-CO", {
+                      month: "long",
+                      year: "numeric",
+                    })}
+              </time>
+              <h3 class="text-lg font-semibold text-heading my-2">
+                {education.title} <span class="text-main">@</span>{" "}
+                {education.institution}
+              </h3>
+            </li>
+          ))
+        }
+      </ol> 
+    </div>
   </div>
 </section>
