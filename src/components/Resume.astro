@@ -8,7 +8,9 @@ import { educations, experiences } from "../constants";
   >
     <h2 class="text-h1-size text-main font-bold text-center">Currículum</h2>
     <div>
-      <h3 class="text-h3-size flex items-center gap-2"><i class="ri-briefcase-fill"></i> Experiencia</h3>
+      <h3 class="text-h3-size flex items-center gap-2">
+        <i class="ri-briefcase-fill"></i> Experiencia
+      </h3>
 
       <ol class="relative border-s-2 mx-2">
         {
@@ -32,9 +34,11 @@ import { educations, experiences } from "../constants";
                 {experience.role} <span class="text-main">@</span>{" "}
                 {experience.company}
               </h3>
-              <p class="mb-4 text-base font-normal whitespace-pre-wrap">
-                {experience.description}
-              </p>
+              <div class="mb-4 text-base font-normal">
+                {experience.description.split("\n").map((paragraph) => (
+                  <p class="mt-2">{paragraph}</p>
+                ))}
+              </div>
             </li>
           ))
         }
@@ -67,7 +71,7 @@ import { educations, experiences } from "../constants";
             </li>
           ))
         }
-      </ol> 
+      </ol>
     </div>
   </div>
 </section>
